@@ -59,21 +59,21 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold text-black">
               VP3D
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-white/80 hover:text-white transition-colors">Home</a>
-              <a href="#projects" className="text-white/80 hover:text-white transition-colors">Projects</a>
-              <a href="#services" className="text-white/80 hover:text-white transition-colors">Services</a>
-              <a href="#contact" className="text-white/80 hover:text-white transition-colors">Contact</a>
+              <a href="#home" className="text-gray-700 hover:text-black transition-colors">Home</a>
+              <a href="#projects" className="text-gray-700 hover:text-black transition-colors">Projects</a>
+              <a href="#services" className="text-gray-700 hover:text-black transition-colors">Services</a>
+              <a href="#contact" className="text-gray-700 hover:text-black transition-colors">Contact</a>
             </div>
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+            <Button className="bg-red-600 hover:bg-red-700 text-white">
               Get Quote
             </Button>
           </div>
@@ -81,34 +81,23 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        >
-          <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        </div>
-
+      <section id="home" className="relative min-h-screen flex items-center justify-center bg-black">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <div className="mb-6">
-            <Sparkles className="w-16 h-16 mx-auto text-purple-400 animate-pulse" />
+            <Sparkles className="w-16 h-16 mx-auto text-red-600" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
             Future of 3D Printing
           </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-8 animate-fade-in delay-300">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8">
             Transforming ideas into reality with cutting-edge 3D printing technology
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in delay-500">
-            <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-8 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-8 py-6">
               Start Your Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-6">
               <Play className="mr-2 w-5 h-5" />
               Watch Demo
             </Button>
@@ -116,18 +105,18 @@ const Index = () => {
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/60" />
+          <ChevronDown className="w-8 h-8 text-white" />
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6">
+      <section id="projects" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Our Projects
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Discover our portfolio of innovative 3D printing projects across various industries
             </p>
           </div>
@@ -136,26 +125,25 @@ const Index = () => {
             {projects.map((project, index) => (
               <Card 
                 key={index} 
-                className="group bg-white/5 backdrop-blur-lg border-white/10 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 overflow-hidden"
+                className="group bg-white border border-gray-200 hover:border-red-600 transition-all duration-300 hover:shadow-lg overflow-hidden"
               >
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-purple-500/80 text-white text-sm rounded-full backdrop-blur-sm">
+                    <span className="px-3 py-1 bg-red-600 text-white text-sm rounded">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-red-600 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-white/70">{project.description}</p>
+                  <p className="text-gray-600">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -164,13 +152,13 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-black/20 backdrop-blur-sm">
+      <section id="services" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
               Our Services
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Comprehensive 3D printing solutions tailored to your specific needs
             </p>
           </div>
@@ -179,16 +167,16 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index}
-                className="group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:scale-105"
+                className="group bg-white border border-gray-200 hover:border-red-600 transition-all duration-300 hover:shadow-lg"
               >
                 <CardContent className="p-8 text-center">
                   <div className="mb-6">
-                    <service.icon className="w-16 h-16 mx-auto text-purple-400 group-hover:text-pink-400 transition-colors duration-300" />
+                    <service.icon className="w-16 h-16 mx-auto text-black group-hover:text-red-600 transition-colors duration-300" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-white/70">{service.description}</p>
+                  <p className="text-gray-600">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -197,15 +185,15 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-black">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-white/80 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Let's bring your ideas to life with our advanced 3D printing technology
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-lg px-12 py-6">
+          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6">
             Get Started Today
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
@@ -213,16 +201,16 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-black/40 backdrop-blur-lg border-t border-white/10">
+      <footer className="py-12 px-6 bg-white border-t border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          <div className="text-3xl font-bold text-black mb-4">
             VP3D
           </div>
-          <p className="text-white/60 mb-6">Innovating the future of 3D printing</p>
-          <div className="flex justify-center space-x-6 text-white/60">
-            <a href="#" className="hover:text-purple-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Terms</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Contact</a>
+          <p className="text-gray-600 mb-6">Innovating the future of 3D printing</p>
+          <div className="flex justify-center space-x-6 text-gray-600">
+            <a href="#" className="hover:text-red-600 transition-colors">Privacy</a>
+            <a href="#" className="hover:text-red-600 transition-colors">Terms</a>
+            <a href="#" className="hover:text-red-600 transition-colors">Contact</a>
           </div>
         </div>
       </footer>
