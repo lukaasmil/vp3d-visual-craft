@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Printer, Zap, Shield, Sparkles, Play, ChevronDown } from "lucide-react";
+import { ArrowRight, Printer, Zap, Shield, Play, ChevronDown, Camera, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -13,67 +13,45 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const projects = [
-    {
-      title: "Aerospace Components",
-      category: "Industrial",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-      description: "High-precision aerospace parts with exceptional quality"
-    },
-    {
-      title: "Medical Devices",
-      category: "Healthcare",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      description: "Custom medical prototypes and devices"
-    },
-    {
-      title: "Automotive Parts",
-      category: "Automotive",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      description: "Rapid prototyping for automotive industry"
-    },
-    {
-      title: "Consumer Products",
-      category: "Design",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop",
-      description: "Innovative consumer product development"
-    }
-  ];
+  const portfolioSlots = Array.from({ length: 8 }, (_, i) => ({
+    id: i + 1,
+    placeholder: true
+  }));
 
   const services = [
     {
       icon: Printer,
-      title: "3D Printing",
-      description: "State-of-the-art 3D printing technology for precision manufacturing"
+      title: "Precision Printing",
+      description: "Ultra-high resolution 3D printing with exceptional detail and accuracy"
     },
     {
       icon: Zap,
-      title: "Rapid Prototyping",
-      description: "Fast turnaround times for your prototype development needs"
+      title: "Rapid Turnaround",
+      description: "Fast production cycles without compromising on quality or precision"
     },
     {
       icon: Shield,
-      title: "Quality Assurance",
-      description: "Rigorous quality control ensuring perfect results every time"
+      title: "Quality Assured",
+      description: "Rigorous testing and quality control for every print we deliver"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black font-inter text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white border-b border-gray-200">
+      <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-black">
-              VP3D
+            <div className="text-2xl font-bold font-mono text-white">
+              VP<span className="text-red-500">3D</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-black transition-colors">Home</a>
-              <a href="#projects" className="text-gray-700 hover:text-black transition-colors">Projects</a>
-              <a href="#services" className="text-gray-700 hover:text-black transition-colors">Services</a>
-              <a href="#contact" className="text-gray-700 hover:text-black transition-colors">Contact</a>
+              <a href="#home" className="text-gray-300 hover:text-white transition-colors font-medium">Home</a>
+              <a href="#portfolio" className="text-gray-300 hover:text-white transition-colors font-medium">Portfolio</a>
+              <a href="#services" className="text-gray-300 hover:text-white transition-colors font-medium">Services</a>
+              <a href="#contact" className="text-gray-300 hover:text-white transition-colors font-medium">Contact</a>
             </div>
-            <Button className="bg-red-600 hover:bg-red-700 text-white">
+            <Button className="bg-red-500 hover:bg-red-600 text-white font-medium border-0">
               Get Quote
             </Button>
           </div>
@@ -81,85 +59,93 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-black">
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-          <div className="mb-6">
-            <Sparkles className="w-16 h-16 mx-auto text-red-600" />
+      <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1),transparent_70%)]"></div>
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <div className="mb-8">
+            <div className="w-20 h-20 mx-auto bg-red-500/20 rounded-full flex items-center justify-center animate-glow">
+              <Printer className="w-10 h-10 text-red-500" />
+            </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-            Future of 3D Printing
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white leading-tight">
+            PRECISION
+            <br />
+            <span className="text-red-500">3D PRINTING</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Transforming ideas into reality with cutting-edge 3D printing technology
+          <p className="text-xl md:text-2xl text-gray-400 mb-12 font-light max-w-3xl mx-auto leading-relaxed">
+            Transforming digital concepts into tangible reality with cutting-edge technology and uncompromising precision
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-8 py-6">
-              Start Your Project
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-6 font-medium">
+              Start Project
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-6">
+            <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-10 py-6 font-medium">
               <Play className="mr-2 w-5 h-5" />
-              Watch Demo
+              View Process
             </Button>
           </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white" />
+          <ChevronDown className="w-8 h-8 text-gray-400" />
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-white">
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 px-6 bg-gray-950">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
-              Our Projects
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
+              OUR <span className="text-red-500">PORTFOLIO</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our portfolio of innovative 3D printing projects across various industries
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
+              Explore our collection of precision-crafted 3D prints spanning various industries and applications
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((project, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {portfolioSlots.map((slot) => (
               <Card 
-                key={index} 
-                className="group bg-white border border-gray-200 hover:border-red-600 transition-all duration-300 hover:shadow-lg overflow-hidden"
+                key={slot.id}
+                className="group bg-gray-900 border border-gray-800 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20 overflow-hidden aspect-square"
               >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-red-600 text-white text-sm rounded">
-                      {project.category}
-                    </span>
+                <CardContent className="p-0 h-full relative">
+                  <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                    <div className="text-center opacity-50 group-hover:opacity-70 transition-opacity">
+                      <Camera className="w-12 h-12 mx-auto text-gray-600 mb-4" />
+                      <div className="text-gray-500 text-sm font-medium">
+                        Portfolio Image
+                      </div>
+                      <div className="text-gray-600 text-xs mt-1">
+                        #{slot.id.toString().padStart(2, '0')}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-black mb-2 group-hover:text-red-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600">{project.description}</p>
+                  <div className="absolute inset-0 bg-red-500/0 group-hover:bg-red-500/5 transition-colors duration-300"></div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-16">
+            <Button className="bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-red-500/50">
+              <Upload className="mr-2 w-4 h-4" />
+              Upload Your Designs
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 bg-gray-50">
+      <section id="services" className="py-24 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">
-              Our Services
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
+              OUR <span className="text-red-500">SERVICES</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive 3D printing solutions tailored to your specific needs
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light">
+              Comprehensive 3D printing solutions engineered for perfection
             </p>
           </div>
 
@@ -167,16 +153,18 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index}
-                className="group bg-white border border-gray-200 hover:border-red-600 transition-all duration-300 hover:shadow-lg"
+                className="group bg-gray-900 border border-gray-800 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/10"
               >
-                <CardContent className="p-8 text-center">
-                  <div className="mb-6">
-                    <service.icon className="w-16 h-16 mx-auto text-black group-hover:text-red-600 transition-colors duration-300" />
+                <CardContent className="p-10 text-center">
+                  <div className="mb-8">
+                    <div className="w-16 h-16 mx-auto bg-red-500/20 rounded-lg flex items-center justify-center group-hover:bg-red-500/30 transition-colors">
+                      <service.icon className="w-8 h-8 text-red-500" />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-red-600 transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-red-500 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-400 leading-relaxed font-light">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -185,32 +173,32 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Start Your Project?
+      <section className="py-24 px-6 bg-gradient-to-r from-gray-950 via-black to-gray-950">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
+            READY TO <span className="text-red-500">CREATE</span>?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let's bring your ideas to life with our advanced 3D printing technology
+          <p className="text-xl text-gray-400 mb-12 font-light max-w-3xl mx-auto">
+            Transform your ideas into reality with our precision 3D printing technology
           </p>
-          <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6">
-            Get Started Today
+          <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-12 py-6 font-medium animate-glow">
+            Start Your Project
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-white border-t border-gray-200">
+      <footer className="py-16 px-6 bg-black border-t border-gray-900">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="text-3xl font-bold text-black mb-4">
-            VP3D
+          <div className="text-3xl font-bold font-mono text-white mb-6">
+            VP<span className="text-red-500">3D</span>
           </div>
-          <p className="text-gray-600 mb-6">Innovating the future of 3D printing</p>
-          <div className="flex justify-center space-x-6 text-gray-600">
-            <a href="#" className="hover:text-red-600 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-red-600 transition-colors">Terms</a>
-            <a href="#" className="hover:text-red-600 transition-colors">Contact</a>
+          <p className="text-gray-500 mb-8 font-light">Precision in every dimension</p>
+          <div className="flex justify-center space-x-8 text-gray-500">
+            <a href="#" className="hover:text-red-500 transition-colors font-medium">Privacy</a>
+            <a href="#" className="hover:text-red-500 transition-colors font-medium">Terms</a>
+            <a href="#" className="hover:text-red-500 transition-colors font-medium">Contact</a>
           </div>
         </div>
       </footer>
