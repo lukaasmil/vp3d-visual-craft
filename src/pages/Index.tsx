@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { ArrowRight, Printer, Zap, Shield, Play, ChevronDown, Camera, Upload } from "lucide-react";
+import { ArrowRight, Printer, Zap, Shield, ChevronDown, Camera, Mail, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -77,12 +77,12 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-10 py-6 font-medium">
-              Start Project
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ShoppingCart className="mr-2 w-5 h-5" />
+              Place Order
             </Button>
             <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-10 py-6 font-medium">
-              <Play className="mr-2 w-5 h-5" />
-              View Process
+              <Mail className="mr-2 w-5 h-5" />
+              Contact Us
             </Button>
           </div>
         </div>
@@ -127,13 +127,6 @@ const Index = () => {
               </Card>
             ))}
           </div>
-
-          <div className="text-center mt-16">
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 hover:border-red-500/50">
-              <Upload className="mr-2 w-4 h-4" />
-              Upload Your Designs
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -173,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-r from-gray-950 via-black to-gray-950">
+      <section id="contact" className="py-24 px-6 bg-gradient-to-r from-gray-950 via-black to-gray-950">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
             READY TO <span className="text-red-500">CREATE</span>?
@@ -181,10 +174,16 @@ const Index = () => {
           <p className="text-xl text-gray-400 mb-12 font-light max-w-3xl mx-auto">
             Transform your ideas into reality with our precision 3D printing technology
           </p>
-          <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-12 py-6 font-medium animate-glow">
-            Start Your Project
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white text-lg px-12 py-6 font-medium animate-glow">
+              <ShoppingCart className="mr-2 w-5 h-5" />
+              Place Order
+            </Button>
+            <Button size="lg" variant="outline" className="border-gray-600 text-white hover:bg-gray-800 text-lg px-12 py-6 font-medium">
+              <Mail className="mr-2 w-5 h-5" />
+              Get Quote
+            </Button>
+          </div>
         </div>
       </section>
 
