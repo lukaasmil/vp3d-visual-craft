@@ -13,6 +13,16 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const portfolioSlots = Array.from({ length: 8 }, (_, i) => ({
     id: i + 1,
     placeholder: true
@@ -42,16 +52,20 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg border-b border-gray-800 animate-fade-in">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold font-mono text-white hover:scale-105 transition-transform duration-300">
+            <button 
+              onClick={() => scrollToSection('home')}
+              className="text-2xl font-bold font-mono text-white hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
               VP<span className="text-red-500">3D</span>
-            </div>
+            </button>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Domů</a>
-              <a href="#portfolio" className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Portfolio</a>
-              <a href="#services" className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Služby</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Kontakt</a>
+              <button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Domů</button>
+              <button onClick={() => scrollToSection('portfolio')} className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Portfolio</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Služby</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-all duration-300 font-medium hover:scale-110 transform">Kontakt</button>
             </div>
-            <Button className="bg-red-500 hover:bg-red-600 text-white font-medium border-0 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25">
+            <Button className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold border-0 transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 px-6 py-3 text-base">
+              <Mail className="mr-2 w-4 h-4" />
               Získat nabídku
             </Button>
           </div>
@@ -192,14 +206,17 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-16 px-6 bg-black border-t border-gray-900 animate-fade-in">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="text-3xl font-bold font-mono text-white mb-6 hover:scale-105 transition-transform duration-300">
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="text-3xl font-bold font-mono text-white mb-6 hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
             VP<span className="text-red-500">3D</span>
-          </div>
+          </button>
           <p className="text-gray-500 mb-8 font-light">Přesnost v každém rozměru</p>
           <div className="flex justify-center space-x-8 text-gray-500">
             <a href="#" className="hover:text-red-500 transition-all duration-300 font-medium transform hover:scale-110">Soukromí</a>
             <a href="#" className="hover:text-red-500 transition-all duration-300 font-medium transform hover:scale-110">Podmínky</a>
-            <a href="#" className="hover:text-red-500 transition-all duration-300 font-medium transform hover:scale-110">Kontakt</a>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-red-500 transition-all duration-300 font-medium transform hover:scale-110">Kontakt</button>
           </div>
         </div>
       </footer>
