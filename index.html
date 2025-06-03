@@ -1,32 +1,210 @@
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VP3D - Future of 3D Printing</title>
-    <meta name="description" content="VP3D - Transforming ideas into reality with cutting-edge 3D printing technology. Professional 3D printing services and rapid prototyping." />
-    <meta name="author" content="VP3D" />
-
-    <meta property="og:title" content="VP3D - Future of 3D Printing" />
-    <meta property="og:description" content="VP3D - Transforming ideas into reality with cutting-edge 3D printing technology. Professional 3D printing services and rapid prototyping." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="description" content="VP3D - Transforming ideas into reality with cutting-edge 3D printing technology. Professional 3D printing services and rapid prototyping.">
+    <meta name="author" content="VP3D">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="VP3D - Future of 3D Printing">
+    <meta property="og:description" content="VP3D - Transforming ideas into reality with cutting-edge 3D printing technology. Professional 3D printing services and rapid prototyping.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lovable_dev">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  </head>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <button class="logo" onclick="scrollToSection('home')">
+                VP<span class="logo-accent">3D</span>
+            </button>
+            <div class="nav-links">
+                <button onclick="scrollToSection('home')" class="nav-link">Domů</button>
+                <button onclick="scrollToSection('portfolio')" class="nav-link">Portfolio</button>
+                <button onclick="scrollToSection('services')" class="nav-link">Služby</button>
+                <button onclick="scrollToSection('contact')" class="nav-link">Kontakt</button>
+            </div>
+            <button class="nav-cta">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Získat nabídku
+            </button>
+        </div>
+    </nav>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content animate-fade-in">
+            <div class="hero-icon animate-float">
+                <div class="icon-container animate-glow">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6,9 6,2 18,2 18,9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect width="12" height="8" x="6" y="14"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="hero-title animate-scale-in">
+                PŘESNÝ<br>
+                <span class="title-accent">3D TISK</span>
+            </h1>
+            <p class="hero-description animate-fade-in delay-300">
+                Přeměňujeme digitální koncepty na hmotnou realitu pomocí nejmodernější technologie a nekompromisní přesnosti
+            </p>
+            <div class="hero-buttons animate-fade-in delay-500">
+                <button class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="8" cy="21" r="1"/>
+                        <circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L23 6H6"/>
+                    </svg>
+                    Objednat
+                </button>
+                <button class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    Kontaktovat nás
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-bounce">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">
+                    NAŠE <span class="title-accent">PORTFOLIO</span>
+                </h2>
+                <p class="section-description">
+                    Prozkoumejte naši kolekci precizně vyrobených 3D tisků z různých odvětví a aplikací
+                </p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Portfolio items will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header animate-fade-in">
+                <h2 class="section-title">
+                    NAŠE <span class="title-accent">SLUŽBY</span>
+                </h2>
+                <p class="section-description">
+                    Komplexní řešení 3D tisku navržená pro dokonalost
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 6,2 18,2 18,9"/>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                            <rect width="12" height="8" x="6" y="14"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Přesný tisk</h3>
+                    <p class="service-description">Vysoce rozlišovací 3D tisk s výjimečnými detaily a přesností</p>
+                </div>
+                <div class="service-card animate-fade-in delay-200">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Rychlé dodání</h3>
+                    <p class="service-description">Rychlé výrobní cykly bez kompromisů v kvalitě nebo přesnosti</p>
+                </div>
+                <div class="service-card animate-fade-in delay-400">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Zajištěná kvalita</h3>
+                    <p class="service-description">Přísná kontrola a testování kvality každého výtisku</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta">
+        <div class="container">
+            <div class="cta-content animate-fade-in">
+                <h2 class="cta-title">
+                    PŘIPRAVENI <span class="title-accent">TVOŘIT</span>?
+                </h2>
+                <p class="cta-description">
+                    Přeměňte své nápady na realitu pomocí naší přesné 3D tiskové technologie
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="8" cy="21" r="1"/>
+                            <circle cx="19" cy="21" r="1"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57L23 6H6"/>
+                        </svg>
+                        Objednat
+                    </button>
+                    <button class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        Získat nabídku
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content animate-fade-in">
+                <button class="footer-logo" onclick="scrollToSection('home')">
+                    VP<span class="logo-accent">3D</span>
+                </button>
+                <p class="footer-tagline">Přesnost v každém rozměru</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Soukromí</a>
+                    <a href="#" class="footer-link">Podmínky</a>
+                    <button onclick="scrollToSection('contact')" class="footer-link">Kontakt</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
